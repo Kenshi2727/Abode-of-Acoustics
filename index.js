@@ -8,9 +8,18 @@ menuClose.click(() => sidebar.css('left', '-100%'));
 
 const trending = $('.trending .info .buttons button');
 var flag = false;
+var audio = new Audio('./assets/songs/DuskTillDawn.mp3');
 trending.click(() => {
     if (flag === false) {
-        var audio = new Audio('./assets/songs/DuskTillDawn.mp3');
+        flag = true;
+        const img = $('.container .right-section .music-player .song-info img');
+        img.attr('src', './assets/images/trending.png');
+        const h3 = $('.container .right-section .music-player .song-info .description h3');
+        h3.text('Dusk Till Dawn');
+        const h5 = $('.container .right-section .music-player .song-info .description h5');
+        h5.text('Zayn Malik');
+
+
         audio.play();
         trending.text("Stop playing!");
         setTimeout(() => {
@@ -18,6 +27,7 @@ trending.click(() => {
         }, 235000);
     }
     else {
+        flag = false;
         audio.pause();
         trending.text("Listen Now!");
     }

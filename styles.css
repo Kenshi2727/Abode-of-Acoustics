@@ -268,7 +268,11 @@ html,body{
     justify-content: center;
     border-radius: 6px;
     cursor: pointer;
+}
 
+.container main .playlist .genres .items .item:hover{
+    transform: scale(1.05);
+    transition: all 0.2s ease;
 }
 
 .container main .playlist .genres .items .item p{
